@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}   
+        .ln{stroke: rgba(120, 128, 120, 0.575);}
+        .ax{fill: grey;}
+        .nt{position: relative; z-index: 2; fill: red; font-size: x-large;}
+        .sd{padding: 5px; background-color: white; font-size: small; display:none; box-shadow: 2px 2px 2px grey; border-radius: 5%; position: absolute; z-index: 3;}
+        .nt:hover{fill: rgb(56, 66, 70); cursor: pointer;}
+    </style>
+</head>
+<body>
+    <div>
+        <svg height="500" width="800" style="background-color: bisque; margin: 50px; box-shadow: 5px 3px 6px  rgb(207, 204, 204); z-index:1">
+            <line class="ln" x1="100" y1="50" x2="700" y2="50" />
+            <line class="ln" x1="100" y1="100" x2="700" y2="100" />
+            <line class="ln" x1="100" y1="150" x2="700" y2="150" />
+            <line class="ln" x1="100" y1="200" x2="700" y2="200" />
+            <line class="ln" x1="100" y1="250" x2="700" y2="250" />
+            <line class="ln" x1="100" y1="300" x2="700" y2="300" />
+            <line class="ln" x1="100" y1="350" x2="700" y2="350" />
+            <line class="ln" x1="100" y1="400" x2="700" y2="400" />
+            <line class="ln" x1="80" y1="450" x2="720" y2="450" style="stroke: rgb(0, 0, 0);" />
+
+            <text id="y1" class="ax" x="60" y="54">800</text>
+            <text id="y2" class="ax" x="60" y="104">700</text>
+            <text id="y3" class="ax" x="60" y="154">600</text>
+            <text id="y4" class="ax" x="60" y="204">500</text>
+            <text id="y5" class="ax" x="60" y="254">400</text>
+            <text id="y6" class="ax" x="60" y="304">300</text>
+            <text id="y7" class="ax" x="60" y="354">200</text>
+            <text id="y8" class="ax" x="60" y="404">100</text> 
+            
+            <text id="x1" class="ax" x="140" y="470">100</text>
+            <text id="x2" class="ax" x="190" y="470">200</text>
+            <text id="x3" class="ax" x="240" y="470">300</text>
+            <text id="x4" class="ax" x="290" y="470">400</text>
+            <text id="x5" class="ax" x="340" y="470">500</text>
+            <text id="x6" class="ax" x="390" y="470">600</text>
+            <text id="x7" class="ax" x="440" y="470">700</text>
+            <text id="x8" class="ax" x="490" y="470">800</text>
+            <text id="x9" class="ax" x="540" y="470">900</text>
+            <text id="x10" class="ax" x="590" y="470">1000</text>
+            <text id="x11" class="ax" x="640" y="470">1100</text>
+            <text id="x12" class="ax" x="690" y="470">1200</text>
+
+            <polyline points="100,450 150,428 203,420, 253,400 304,298 354,400 404,200 454,250 504,200 554,220 603,170 654,160 700,50   " style="stroke-width: 2px; stroke:hotpink; fill:none"/>
+
+            <text class="nt" x="100" y="457" onmouseover="show(1)" onmouseout="off(1)">&bull;</text>
+            <text class="nt" x="145" y="437" onmouseover="show(2)" onmouseout="off(2)">&bull;</text>
+            <text class="nt" x="200" y="427" onmouseover="show(3)" onmouseout="off(3)">&bull;</text>
+            <text class="nt" x="250" y="407" onmouseover="show(4)" onmouseout="off(4)">&bull;</text>
+            <text class="nt" x="300" y="307" onmouseover="show(5)" onmouseout="off(5)">&bull;</text>            
+            <text class="nt" x="350" y="407" onmouseover="show(6)" onmouseout="off(6)">&bull;</text>
+            <text class="nt" x="400" y="207" onmouseover="show(7)" onmouseout="off(7)">&bull;</text>            
+            <text class="nt" x="450" y="257" onmouseover="show(8)" onmouseout="off(8)">&bull;</text>
+            <text class="nt" x="500" y="207" onmouseover="show(9)" onmouseout="off(9)">&bull;</text>           
+            <text class="nt" x="550" y="227" onmouseover="show(10)" onmouseout="off(10)">&bull;</text>
+            <text class="nt" x="600" y="177" onmouseover="show(11)" onmouseout="off(11)">&bull;</text>            
+            <text class="nt" x="650" y="167" onmouseover="show(12)" onmouseout="off(12)">&bull;</text>
+            <text class="nt" x="695" y="59" onmouseover="show(13)" onmouseout="off(13)">&bull;</text>
+
+
+        </svg>
+                <div id="sd" class="sd"></div>
+
+    </div>
+
+    <script>
+        var sd = document.getElementById('sd');
+        
+        function show(x) {
+            if (x == 1) {
+                sd.style.display = 'block';
+                sd.style.top = '460px';         
+                sd.style.left = '150px';         
+                sd.innerHTML = '0,0';         
+            } else if(x == 2) {
+                sd.style.display = 'block';
+                sd.style.top = '440px';         
+                sd.style.left = '180px';         
+                sd.innerHTML = '240,271';            
+            } else if(x == 3) {
+                sd.style.display = 'block';
+                sd.style.top = '430px';         
+                sd.style.left = '220px';         
+                sd.innerHTML = '240,271';          
+            } else if(x == 4) {
+                sd.style.display = 'block';
+                sd.style.top = '410px';         
+                sd.style.left = '260px';         
+                sd.innerHTML = '240,271';           
+            } else if(x == 5) {
+                sd.style.display = 'block';
+                sd.style.top = '315px';         
+                sd.style.left = '320px';         
+                sd.innerHTML = '240,271';           
+            } else if(x == 6) {
+                sd.style.display = 'block';
+                sd.style.top = '460px';         
+                sd.style.left = '370px';         
+                sd.innerHTML = '240,271';            
+            } else if(x == 7) {
+                sd.style.display = 'block';
+                sd.style.top = '210px';         
+                sd.style.left = '420px';         
+                sd.innerHTML = '240,271';            
+            } else if(x == 8) {
+                sd.style.display = 'block';
+                sd.style.top = '310px';         
+                sd.style.left = '470px';         
+                sd.innerHTML = '240,271';            
+            } else if(x == 9) {
+                sd.style.display = 'block';
+                sd.style.top = '215px';         
+                sd.style.left = '530px';         
+                sd.innerHTML = '240,271';
+            } else if(x == 10) {
+                sd.style.display = 'block';
+                sd.style.top = '280px';         
+                sd.style.left = '580px';         
+                sd.innerHTML = '200,271';
+            } else if(x == 11) {
+                sd.style.display = 'block';
+                sd.style.top = '180px';         
+                sd.style.left = '620px';         
+                sd.innerHTML = '240,271';
+            } else if(x == 12) {
+                sd.style.display = 'block';
+                sd.style.top = '220px';         
+                sd.style.left = '670px';         
+                sd.innerHTML = '240,271';           
+            } else if(x == 13) {
+                sd.style.display = 'block';
+                sd.style.top = '90px';         
+                sd.style.left = '680px';         
+                sd.innerHTML = '240,271';
+            }else{
+                console.log("somthing is wrong!")
+            }
+        }
+
+        function off(x) {
+            sd.style.display = 'none';
+        }
+
+        
+
+        
+    </script>
+</body>
+</html>
